@@ -1,0 +1,15 @@
+@import "src/assets/styles/modules/_variables.scss";
+
+.rxjs-container {
+  padding: 30px;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  justify-content: space-between;
+}
+
+.rxjs-container__link {
+  font-size: $font-nav;
+}

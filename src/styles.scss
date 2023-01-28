@@ -1,1 +1,38 @@
-/* You can add global styles to this file, and also import other style files */
+@import "src/assets/styles/modules/_variables.scss";
+
+body {
+  font-family: $font-family;
+  font-size: $font;
+  font-weight: $regular;
+}
+
+h1 {
+  font-size: $font-h1;
+}
+
+.full-screen {
+  width: 100vw;
+  height: 100vh;
+}
+
+.scroll {
+  /* width */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #888;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+}
