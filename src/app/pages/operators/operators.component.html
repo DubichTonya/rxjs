@@ -1,11 +1,21 @@
-<div class="container-fluid pt-3 full-screen">
+<div class="full-screen container-fluid">
   <div class="row">
     <div class="col-3 operators__menu scroll">
-      <app-accordion-item [height]="200">
-        <a>some content</a>
-      </app-accordion-item>
+      <ng-container *ngFor="let item of mapOfOperators | keyvalue">
+        <app-accordion-item
+          [(open)]="open"
+          [title]="item.key"
+          [height]="accordionLinkHeight * (item.value.length || 1)"
+        >
+          <ul class="list-group">
+            <li class="list-group-item" *ngFor="let link of item.value">
+              <a class="text-dark" [routerLink]="[link[1]]" routerLinkActive="active-link">{{ link[0] }}</a>
+            </li>
+          </ul>
+        </app-accordion-item>
+      </ng-container>
     </div>
-    <div class="col-9">
+    <div class="col-9 operators__content">
       <router-outlet></router-outlet>
     </div>
   </div>

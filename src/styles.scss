@@ -1,4 +1,14 @@
-@import "src/assets/styles/modules/_variables.scss";
+@import 'src/assets/styles/modules/_variables.scss';
+@import 'src/assets/styles/modules/_scroll.scss';
+
+html {
+  box-sizing: border-box;
+}
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
 
 body {
   font-family: $font-family;
@@ -11,28 +21,36 @@ h1 {
 }
 
 .full-screen {
+  padding-top: 15px;
+  padding-bottom: 15px;
   width: 100vw;
   height: 100vh;
+  overflow: hidden;
 }
 
-.scroll {
-  /* width */
-::-webkit-scrollbar {
-  width: 10px;
+a {
+  text-decoration: none;
 }
 
-/* Track */
-::-webkit-scrollbar-track {
-  background: #f1f1f1;
+.list-group-item {
+  .text-dark.active-link {
+    color: $blue !important;
+  }
 }
 
-/* Handle */
-::-webkit-scrollbar-thumb {
-  background: #888;
+pre {
+  font-size: $font-xs;
+}
+blockquote {
+  font-size: $font-sm;
+  padding-bottom: 10px;
+  border-bottom: 1px solid black;
 }
 
-/* Handle on hover */
-::-webkit-scrollbar-thumb:hover {
-  background: #555;
+.mh-30 {
+  max-height: calc(100vh - 30px);
 }
+
+.of-auto {
+  overflow: auto;
 }

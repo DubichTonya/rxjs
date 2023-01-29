@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { trigger, state, style, animate, transition } from '@angular/animations';
 
 @Component({
@@ -14,9 +14,14 @@ export class AccordionItemComponent {
   @Input()
   title!: string;
 
-  isOpen = false;
+  @Input()
+  open: boolean = false;
+
+  @Output()
+  openChange: EventEmitter<boolean> = new EventEmitter();
 
   toggle() {
-    this.isOpen = !this.isOpen;
+    this.open = !this.open;
+    this.openChange.emit(this.open);
   }
 }

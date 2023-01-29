@@ -1,20 +1,25 @@
-import { AfterViewInit, Component, ElementRef, ViewChild } from '@angular/core';
-import { combineLatest, fromEvent, map, scan, startWith, Subject, takeUntil } from 'rxjs';
-import { html, js } from './template';
+export const html = `
+    <div class="row">
+    <div class="col-4">
+      <button type="button" class="btn btn-danger me-2" #redBtn>Red</button>
+      <button type="button" class="btn btn-dark" #blackBtn>Black</button>
+    </div>
+    <div class="col-8 d--inline-flex aling-items-center">
+      <span class="me-2">
+        Red: <span #redTotal>{{ info.redTotal }}</span>
+      </span>
+      <span class="me-2">
+        Black: <span #blackTotal>{{ info.blackTotal }}</span>
+      </span>
+      <span class="me-2">
+        Total: <span #total>{{ info.total }}</span>
+      </span>
+    </div>
+  </div>
+  `;
 
-interface InfoInterface {
-  redTotal: number;
-  blackTotal: number;
-  total: number;
-}
-
-@Component({
-  selector: 'app-combine-latest',
-  templateUrl: './combine-latest.component.html',
-  styleUrls: ['./combine-latest.component.scss'],
-})
-export class CombineLatestComponent implements AfterViewInit {
-  /** Получаем доступ к элементам */
+export const js = `
+    /** Получаем доступ к элементам */
   @ViewChild('redBtn')
   redBtn!: ElementRef<HTMLElement>;
   @ViewChild('blackBtn')
@@ -22,8 +27,6 @@ export class CombineLatestComponent implements AfterViewInit {
 
   /** Необходим для управления завершением подписки */
   private destroy$ = new Subject<void>();
-  html = html;
-  js = js;
 
   info: InfoInterface = {
     redTotal: 0,
@@ -55,4 +58,4 @@ export class CombineLatestComponent implements AfterViewInit {
       startWith(0) // необходимо как стартовое значение для обеих кнопок. если его не использовать, то combineLatest будет ждать пока вы нажмете на обе кнопки.
     );
   }
-}
+  `;
