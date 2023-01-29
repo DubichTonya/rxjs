@@ -1,1 +1,41 @@
-<p>with-latest-from works!</p>
+<div class="d-flex flex-column mh-30">
+  <blockquote>
+    Берет и компонует observable (frameworkListSubject) и последнее значение
+    observable (colorListSubject) в массив. Изменения происходят в тот момент
+    когда изменяется frameworkListSubject, если же конечно установлено значение
+    для colorListSubject. В примере специально используется Subject без
+    начального значения чтобы лучше можно было понять работу оператора.
+  </blockquote>
+  <div class="row">
+    <div class="col-6">
+      <label>Framework</label>
+      <select class="form-select" (change)="frameworkChoose($event)">
+        <option *ngFor="let item of frameworkList" [value]="item">
+          {{ item }}
+        </option>
+      </select>
+      <br />
+      <label for="">Color</label>
+      <select class="form-select" (change)="colorChoose($event)">
+        <option *ngFor="let item of colorList" [value]="item">
+          {{ item }}
+        </option>
+      </select>
+    </div>
+    <div class="col-6 d-flex align-items-center justify-content-center">
+      {{ result$ | async }}
+    </div>
+  </div>
+  <div class="row of-auto scroll">
+    <div class="col-6">
+      <pre class="scroll">
+        {{ js }}
+      </pre>
+    </div>
+    <div class="col-6">
+      <pre class="scroll">
+        {{ html }}
+      </pre>
+    </div>
+  </div>
+</div>

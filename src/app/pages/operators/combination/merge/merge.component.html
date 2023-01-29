@@ -1,1 +1,18 @@
-<p>merge works!</p>
+<div class="d-flex flex-column mh-30">
+  <blockquote>Объединяет множество observable в один.</blockquote>
+  <div class="row" [style.min-height.px]="30">
+    <div class="col">{{ result$ | async }}</div>
+  </div>
+  <div class="row of-auto scroll">
+    <div class="col-6">
+      <pre class="scroll">
+        {{ js }}
+      </pre>
+    </div>
+    <div class="col-6">
+      <pre class="scroll">
+        {{ html }}
+      </pre>
+    </div>
+  </div>
+</div>

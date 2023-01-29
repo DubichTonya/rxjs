@@ -20,26 +20,32 @@ const routes: Routes = [
       },
       {
         path: 'combineLatest',
+        title: 'combineLatest',
         component: CombineLatestComponent,
       },
       {
         path: 'concat',
+        title: 'concat',
         component: ConcatComponent,
       },
       {
         path: 'forkJoin',
+        title: 'forkJoin',
         component: ForkJoinComponent,
       },
       {
         path: 'merge',
+        title: 'merge',
         component: MergeComponent,
       },
       {
         path: 'startWith',
+        title: 'startWith',
         component: StartWithComponent,
       },
       {
         path: 'withLatestFrom',
+        title: 'withLatestFrom',
         component: WithLatestFromComponent,
       },
     ],
