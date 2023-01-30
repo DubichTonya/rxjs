@@ -3,13 +3,19 @@
     <div class="col-3 operators__menu scroll">
       <ng-container *ngFor="let item of mapOfOperators | keyvalue">
         <app-accordion-item
-          [(open)]="open"
+          [open]="isOpen(item.key)"
           [title]="item.key"
           [height]="accordionLinkHeight * (item.value.length || 1)"
+          (openChange)="openChange($event)"
         >
           <ul class="list-group">
             <li class="list-group-item" *ngFor="let link of item.value">
-              <a class="text-dark" [routerLink]="[link[1]]" routerLinkActive="active-link">{{ link[0] }}</a>
+              <a
+                class="text-dark"
+                [routerLink]="[link[1]]"
+                routerLinkActive="active-link"
+                >{{ link[0] }}</a
+              >
             </li>
           </ul>
         </app-accordion-item>

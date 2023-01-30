@@ -1,5 +1,12 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
-import { trigger, state, style, animate, transition } from '@angular/animations';
+import {
+  trigger,
+  state,
+  style,
+  animate,
+  transition,
+} from '@angular/animations';
+import { AccordionItemEventInterface } from './accordion-items.interface';
 
 @Component({
   selector: 'app-accordion-item',
@@ -18,10 +25,11 @@ export class AccordionItemComponent {
   open: boolean = false;
 
   @Output()
-  openChange: EventEmitter<boolean> = new EventEmitter();
+  openChange: EventEmitter<AccordionItemEventInterface> =
+    new EventEmitter<AccordionItemEventInterface>();
 
   toggle() {
     this.open = !this.open;
-    this.openChange.emit(this.open);
+    this.openChange.emit({ open: this.open, title: this.title });
   }
 }

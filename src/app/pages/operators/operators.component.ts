@@ -1,6 +1,7 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { NavigationEnd, Router } from '@angular/router';
 import { filter, map } from 'rxjs';
+import { AccordionItemEventInterface } from 'src/app/shared/components/accordion-item/accordion-items.interface';
 
 @Component({
   selector: 'app-operators',
@@ -8,26 +9,57 @@ import { filter, map } from 'rxjs';
   styleUrls: ['./operators.component.scss'],
 })
 export class OperatorsComponent implements OnInit {
-  private path: string = '/operators/combination/';
+  private pathCombination: string = '/operators/combination/';
+  private pathConditional: string = '/operators/conditional/';
   public accordionLinkHeight: number = 44;
   public mapOfOperators = new Map([
     [
       'combination',
       [
-        ['combineLatest', this.path + 'combineLatest'],
-        ['concat', this.path + 'concat'],
-        ['forkJoin', this.path + 'forkJoin'],
-        ['merge', this.path + 'merge'],
-        ['startWith', this.path + 'startWith'],
-        ['withLatestFrom', this.path + 'withLatestFrom'],
+        ['combineLatest', this.pathCombination + 'combineLatest'],
+        ['concat', this.pathCombination + 'concat'],
+        ['forkJoin', this.pathCombination + 'forkJoin'],
+        ['merge', this.pathCombination + 'merge'],
+        ['startWith', this.pathCombination + 'startWith'],
+        ['withLatestFrom', this.pathCombination + 'withLatestFrom'],
+      ],
+    ],
+    [
+      'conditional',
+      [
+        ['defaultEmpty', this.pathConditional + 'defaultEmpty'],
+        ['every', this.pathConditional + 'every'],
+        ['sequenceequal', this.pathConditional + 'sequenceequal'],
+        ['iif', this.pathConditional + 'iif'],
       ],
     ],
   ]);
-  public open: boolean = false;
+
+  openConditions = new Map([
+    ['combination', false],
+    ['conditional', false],
+  ]);
 
   constructor(private router: Router) {}
+  ngOnInit(): void {}
 
-  ngOnInit(): void {
-    this.open = this.router.url.includes(this.path);
+  openChange($event: AccordionItemEventInterface): void {
+    const { open, title } = $event;
+    if (this.openConditions.has(title)) {
+      this.openConditions.set(title, open);
+    }
+  }
+
+  isOpen(title: string): boolean {
+    if (
+      this.router.url.includes(title) &&
+      this.openConditions.has(title) &&
+      !this.openConditions.get(title)
+    ) {
+      this.openConditions.set(title, true);
+    }
+    return !!(
+      this.router.url.includes(title) || this.openConditions.get(title)
+    );
   }
 }

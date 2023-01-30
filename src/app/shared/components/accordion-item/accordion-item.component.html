@@ -1,7 +1,9 @@
 <nav class="w-100">
-  <button type="button" class="btn btn-secondary w-100" (click)="toggle()">{{ title }}</button>
+  <button type="button" class="btn btn-secondary w-100" (click)="toggle()">
+    {{ title }}
+  </button>
 </nav>
 
-<div class="accordion-item__block" [style.height.px]="open ? height : 0">
+<div class="accordion-item__block mb-1" [style.height.px]="open ? height : 0">
   <ng-content></ng-content>
 </div>
