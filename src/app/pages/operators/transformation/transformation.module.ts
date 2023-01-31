@@ -10,7 +10,7 @@ import { MergeMapComponent } from './merge-map/merge-map.component';
 import { FlatMapComponent } from './flat-map/flat-map.component';
 import { SwitchMapComponent } from './switch-map/switch-map.component';
 import { ScanComponent } from './scan/scan.component';
-
+import { ContentComponent } from 'src/app/shared/components/content/content.component';
 
 @NgModule({
   declarations: [
@@ -21,11 +21,8 @@ import { ScanComponent } from './scan/scan.component';
     MergeMapComponent,
     FlatMapComponent,
     SwitchMapComponent,
-    ScanComponent
+    ScanComponent,
   ],
-  imports: [
-    CommonModule,
-    TransformationRoutingModule
-  ]
+  imports: [CommonModule, TransformationRoutingModule, ContentComponent],
 })
-export class TransformationModule { }
+export class TransformationModule {}

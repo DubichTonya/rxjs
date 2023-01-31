@@ -1,21 +1,16 @@
-<div class="d-flex flex-column mh-30">
-  <blockquote>Подписывается на следующий observable, когда предыдущий завершен.</blockquote>
-  <div class="d-flex">
-    <button type="button" class="btn btn-outline-dark" (click)="onClick()">Start</button>
-    <div class="d-flex align-items-center justify-content-center flex-grow-1 concat__example">
+<app-content [html]="html" [js]="js">
+  <span description>
+    Подписывается на следующий observable, когда предыдущий завершен.
+  </span>
+
+  <div example class="d-flex">
+    <button type="button" class="btn btn-outline-dark" (click)="onClick()">
+      Start
+    </button>
+    <div
+      class="d-flex align-items-center justify-content-center flex-grow-1 concat__example"
+    >
       {{ message }}
     </div>
   </div>
-  <div class="row of-auto scroll">
-    <div class="col-6">
-      <pre class="scroll">
-        {{ js }}
-      </pre>
-    </div>
-    <div class="col-6">
-      <pre class="scroll">
-        {{ html }}
-      </pre>
-    </div>
-  </div>
-</div>
+</app-content>

@@ -1,24 +1,13 @@
-<div class="d-flex flex-column mh-30">
-  <blockquote>
+<app-content [html]="html" [js]="js">
+  <span description>
     Подписывается на первое или второе событие в зависимости от условия.
-  </blockquote>
-  <div class="row">
+  </span>
+
+  <div example class="row">
     <div class="col-6">Напечатайте слово "qwerty".</div>
     <div class="col-6">Вы ввели ({{ keyCount }} значений): {{ keyValue }}</div>
     <div class="col-12">
       <strong>{{ result$ | async }}</strong>
     </div>
   </div>
-  <div class="row of-auto scroll">
-    <div class="col-6">
-      <pre class="scroll">
-        {{ js }}
-      </pre>
-    </div>
-    <div class="col-6">
-      <pre class="scroll">
-        {{ html }}
-      </pre>
-    </div>
-  </div>
-</div>
+</app-content>

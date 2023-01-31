@@ -1,33 +1,43 @@
-<nav aria-label="breadcrumb">
-  <ol class="breadcrumb">
-    <li
-      class="breadcrumb-item active"
-      routerLink="/subjects/asyncSubject"
-      routerLinkActive="active"
-    >
-      AsyncSubject
+<div class="full-screen container-fluid">
+  <ul class="nav nav-tabs">
+    <li class="nav-item">
+      <app-logo></app-logo>
     </li>
-    <li
-      class="breadcrumb-item active"
-      routerLink="/subjects/behaviorSubject"
-      routerLinkActive="active"
-    >
-      BehaviorSubject
+    <li class="nav-item">
+      <a
+        class="nav-link"
+        routerLink="/subjects/asyncSubject"
+        routerLinkActive="active"
+        >AsyncSubject
+      </a>
     </li>
-    <li
-      class="breadcrumb-item active"
-      routerLink="/subjects/replaySubject"
-      routerLinkActive="active"
-    >
-      ReplaySubject
+    <li class="nav-item">
+      <a
+        class="nav-link"
+        routerLink="/subjects/behaviorSubject"
+        routerLinkActive="active"
+      >
+        BehaviorSubject
+      </a>
     </li>
-    <li
-      class="breadcrumb-item active"
-      routerLink="/subjects/subject"
-      routerLinkActive="active"
-    >
-      Subject
+    <li class="nav-item">
+      <a
+        class="nav-link"
+        routerLink="/subjects/replaySubject"
+        routerLinkActive="active"
+        >ReplaySubject
+      </a>
     </li>
-  </ol>
-</nav>
-<router-outlet></router-outlet>
+    <li class="nav-item">
+      <a
+        class="nav-link"
+        routerLink="/subjects/subject"
+        routerLinkActive="active"
+        >subject
+      </a>
+    </li>
+  </ul>
+  <div class="subjects__wrapper">
+    <router-outlet></router-outlet>
+  </div>
+</div>

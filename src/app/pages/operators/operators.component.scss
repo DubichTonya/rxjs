@@ -1,5 +1,5 @@
 .operators__menu {
-  height: 100%;
+  height: calc(100vh - 30px);
   overflow-x: hidden;
-  overflow-y: auto;
+  overflow-y: scroll;
 }

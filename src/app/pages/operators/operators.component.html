@@ -1,6 +1,7 @@
 <div class="full-screen container-fluid">
   <div class="row">
     <div class="col-3 operators__menu scroll">
+      <app-logo [className]="'mb-2'"></app-logo>
       <ng-container *ngFor="let item of mapOfOperators | keyvalue">
         <app-accordion-item
           [open]="isOpen(item.key)"

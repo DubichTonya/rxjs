@@ -1,12 +1,13 @@
-<div class="d-flex flex-column mh-30">
-  <blockquote>
+<app-content [html]="html" [js]="js">
+  <span description>
     Берет и компонует observable (frameworkListSubject) и последнее значение
     observable (colorListSubject) в массив. Изменения происходят в тот момент
     когда изменяется frameworkListSubject, если же конечно установлено значение
     для colorListSubject. В примере специально используется Subject без
-    начального значения чтобы лучше можно было понять работу оператора.
-  </blockquote>
-  <div class="row">
+    начального значения чтобы лучше можно было понять работу оператора.</span
+  >
+
+  <div example class="row">
     <div class="col-6">
       <label>Framework</label>
       <select class="form-select" (change)="frameworkChoose($event)">
@@ -26,16 +27,4 @@
       {{ result$ | async }}
     </div>
   </div>
-  <div class="row of-auto scroll">
-    <div class="col-6">
-      <pre class="scroll">
-        {{ js }}
-      </pre>
-    </div>
-    <div class="col-6">
-      <pre class="scroll">
-        {{ html }}
-      </pre>
-    </div>
-  </div>
-</div>
+</app-content>

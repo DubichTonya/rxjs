@@ -1,6 +1,9 @@
-<div class="d-flex flex-column mh-30">
-  <blockquote>Когда observables завершены возвращает последнее значение каждого.</blockquote>
-  <div class="row">
+<app-content [html]="html" [js]="js">
+  <span description>
+    Когда observables завершены возвращает последнее значение каждого.
+  </span>
+
+  <div example class="row">
     <div [style.height.px]="80" class="col-2">
       <img [src]="(avatars$ | async)?.google" alt="google" />
     </div>
@@ -11,16 +14,4 @@
       <img [src]="(avatars$ | async)?.user" alt="user" />
     </div>
   </div>
-  <div class="row of-auto scroll">
-    <div class="col-6">
-      <pre class="scroll">
-        {{ js }}
-      </pre>
-    </div>
-    <div class="col-6">
-      <pre class="scroll">
-        {{ html }}
-      </pre>
-    </div>
-  </div>
-</div>
+</app-content>

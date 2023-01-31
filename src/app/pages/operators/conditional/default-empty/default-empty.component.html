@@ -1,23 +1,12 @@
-<div class="d-flex flex-column mh-30">
-  <blockquote>
+<app-content [html]="html" [js]="js">
+  <span description>
     Устанавливает значение по умолчанию, если observable не возвращает никакого
     значения. В некоторых случаях, когда мы получаем данные в потоке из
     нескольких observable нам нужно чтобы каждый что-то вернул, потому
-    defaultEmpty помогает избежать ошибки, если observable ничего не возвращает
-  </blockquote>
-  <div class="row">
+    defaultEmpty помогает избежать ошибки, если observable ничего не возвращает.
+  </span>
+
+  <div example class="row">
     <div class="col">{{ result$ | async }}</div>
   </div>
-  <div class="row of-auto scroll">
-    <div class="col-6">
-      <pre class="scroll">
-        {{ js }}
-      </pre>
-    </div>
-    <div class="col-6">
-      <pre class="scroll">
-        {{ html }}
-      </pre>
-    </div>
-  </div>
-</div>
+</app-content>

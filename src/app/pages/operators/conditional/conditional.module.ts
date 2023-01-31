@@ -8,6 +8,7 @@ import { EveryComponent } from './every/every.component';
 import { SeequenceequalComponent } from './seequenceequal/seequenceequal.component';
 import { IifComponent } from './iif/iif.component';
 import { FormsModule } from '@angular/forms';
+import { ContentComponent } from 'src/app/shared/components/content/content.component';
 
 @NgModule({
   declarations: [
@@ -17,6 +18,11 @@ import { FormsModule } from '@angular/forms';
     EveryComponent,
     SeequenceequalComponent,
   ],
-  imports: [CommonModule, ConditionalRoutingModule, FormsModule],
+  imports: [
+    CommonModule,
+    ConditionalRoutingModule,
+    FormsModule,
+    ContentComponent,
+  ],
 })
 export class ConditionalModule {}

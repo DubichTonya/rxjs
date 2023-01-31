@@ -1,7 +1,7 @@
-import { Component, Input, OnInit } from '@angular/core';
-import { NavigationEnd, Router } from '@angular/router';
-import { filter, map } from 'rxjs';
+import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { AccordionItemEventInterface } from 'src/app/shared/components/accordion-item/accordion-items.interface';
+import { mapOfOperators } from './operators.const';
 
 @Component({
   selector: 'app-operators',
@@ -9,35 +9,18 @@ import { AccordionItemEventInterface } from 'src/app/shared/components/accordion
   styleUrls: ['./operators.component.scss'],
 })
 export class OperatorsComponent implements OnInit {
-  private pathCombination: string = '/operators/combination/';
-  private pathConditional: string = '/operators/conditional/';
   public accordionLinkHeight: number = 44;
-  public mapOfOperators = new Map([
-    [
-      'combination',
-      [
-        ['combineLatest', this.pathCombination + 'combineLatest'],
-        ['concat', this.pathCombination + 'concat'],
-        ['forkJoin', this.pathCombination + 'forkJoin'],
-        ['merge', this.pathCombination + 'merge'],
-        ['startWith', this.pathCombination + 'startWith'],
-        ['withLatestFrom', this.pathCombination + 'withLatestFrom'],
-      ],
-    ],
-    [
-      'conditional',
-      [
-        ['defaultEmpty', this.pathConditional + 'defaultEmpty'],
-        ['every', this.pathConditional + 'every'],
-        ['sequenceequal', this.pathConditional + 'sequenceequal'],
-        ['iif', this.pathConditional + 'iif'],
-      ],
-    ],
-  ]);
+  public mapOfOperators = mapOfOperators;
 
   openConditions = new Map([
     ['combination', false],
     ['conditional', false],
+    ['creation', false],
+    ['errorHandling', false],
+    ['filtering', false],
+    ['multicasting', false],
+    ['transformation', false],
+    ['utility', false],
   ]);
 
   constructor(private router: Router) {}

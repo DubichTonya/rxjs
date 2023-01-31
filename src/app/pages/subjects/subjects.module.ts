@@ -7,6 +7,8 @@ import { AsyncSubjectComponent } from './async-subject/async-subject.component';
 import { BehaviorSubjectComponent } from './behavior-subject/behavior-subject.component';
 import { SubjectComponent } from './subject/subject.component';
 import { ReplaySubjectComponent } from './replay-subject/replay-subject.component';
+import { LogoComponent } from 'src/app/shared/components/logo/logo.component';
+import { ContentComponent } from 'src/app/shared/components/content/content.component';
 
 @NgModule({
   declarations: [
@@ -16,6 +18,11 @@ import { ReplaySubjectComponent } from './replay-subject/replay-subject.componen
     SubjectComponent,
     ReplaySubjectComponent,
   ],
-  imports: [CommonModule, SubjectsRoutingModule],
+  imports: [
+    CommonModule,
+    SubjectsRoutingModule,
+    LogoComponent,
+    ContentComponent,
+  ],
 })
 export class SubjectsModule {}

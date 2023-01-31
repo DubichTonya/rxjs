@@ -7,7 +7,7 @@ import { TapComponent } from './tap/tap.component';
 import { DoComponent } from './do/do.component';
 import { DelayComponent } from './delay/delay.component';
 import { FinalizeComponent } from './finalize/finalize.component';
-
+import { ContentComponent } from 'src/app/shared/components/content/content.component';
 
 @NgModule({
   declarations: [
@@ -15,11 +15,8 @@ import { FinalizeComponent } from './finalize/finalize.component';
     TapComponent,
     DoComponent,
     DelayComponent,
-    FinalizeComponent
+    FinalizeComponent,
   ],
-  imports: [
-    CommonModule,
-    UtilityRoutingModule
-  ]
+  imports: [CommonModule, UtilityRoutingModule, ContentComponent],
 })
-export class UtilityModule { }
+export class UtilityModule {}

@@ -1,1 +1,12 @@
-<p>from-event works!</p>
+<app-content [html]="html" [js]="js">
+  <span description> Превращает событие в observable. </span>
+
+  <div example class="row">
+    <div class="col-4">
+      <div class="input-group">
+        <input #input type="text" class="form-control" placeholder="search" />
+      </div>
+    </div>
+    <div class="col-4">Результат ввода: {{ result$ | async }}</div>
+  </div>
+</app-content>

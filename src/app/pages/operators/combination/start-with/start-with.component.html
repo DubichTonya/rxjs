@@ -1,20 +1,9 @@
-<div class="d-flex flex-column mh-30">
-  <blockquote>
-    Устанавливает первоначальное значение, которое будет возвращаться.
-  </blockquote>
-  <div class="row" [style.min-height.px]="30">
+<app-content [html]="html" [js]="js">
+  <span description
+    >Устанавливает первоначальное значение, которое будет возвращаться.</span
+  >
+
+  <div example class="row" [style.min-height.px]="30">
     <div class="col">{{ result$ | async }}</div>
   </div>
-  <div class="row of-auto scroll">
-    <div class="col-6">
-      <pre class="scroll">
-        {{ js }}
-      </pre>
-    </div>
-    <div class="col-6">
-      <pre class="scroll">
-        {{ html }}
-      </pre>
-    </div>
-  </div>
-</div>
+</app-content>

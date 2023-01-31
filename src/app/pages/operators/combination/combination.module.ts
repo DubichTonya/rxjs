@@ -9,6 +9,7 @@ import { ForkJoinComponent } from './fork-join/fork-join.component';
 import { MergeComponent } from './merge/merge.component';
 import { StartWithComponent } from './start-with/start-with.component';
 import { WithLatestFromComponent } from './with-latest-from/with-latest-from.component';
+import { ContentComponent } from 'src/app/shared/components/content/content.component';
 
 @NgModule({
   declarations: [
@@ -20,6 +21,6 @@ import { WithLatestFromComponent } from './with-latest-from/with-latest-from.com
     StartWithComponent,
     WithLatestFromComponent,
   ],
-  imports: [CommonModule, CombinationRoutingModule],
+  imports: [CommonModule, CombinationRoutingModule, ContentComponent],
 })
 export class CombinationModule {}

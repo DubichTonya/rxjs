@@ -1,10 +1,11 @@
-<div class="d-flex flex-column mh-30">
-  <blockquote>
-    Принимает несколько observable и когда происходит событие, то он возвращает последние значение всех наблюдаемых
-    observable. Он не возвращает значение пока все наблюдаемые observable не отработали хотя бы раз, потому иногда стоит
-    задать начальное значение, как в примере.
-  </blockquote>
-  <div class="row">
+<app-content [html]="html" [js]="js">
+  <span description>
+    Принимает несколько observable и когда происходит событие, то он возвращает
+    последние значение всех наблюдаемых observable. Он не возвращает значение
+    пока все наблюдаемые observable не отработали хотя бы раз, потому иногда
+    стоит задать начальное значение, как в примере.
+  </span>
+  <div example class="row">
     <div class="col-4">
       <button type="button" class="btn btn-danger me-2" #redBtn>Red</button>
       <button type="button" class="btn btn-dark" #blackBtn>Black</button>
@@ -21,16 +22,4 @@
       </span>
     </div>
   </div>
-  <div class="row of-auto scroll">
-    <div class="col-6">
-      <pre class="scroll">
-        {{ js }}
-      </pre>
-    </div>
-    <div class="col-6">
-      <pre class="scroll">
-        {{ html }}
-      </pre>
-    </div>
-  </div>
-</div>
+</app-content>

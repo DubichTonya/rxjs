@@ -1,1 +1,8 @@
-<p>of works!</p>
+<app-content [html]="html" [js]="js">
+  <span description>
+    Конвертирует аргументы в последовательность observable. Если использовать
+    дополнительно оператор delay, то первое значение будет null.
+  </span>
+
+  <div example>Результат: {{ result$ | async | json }}</div>
+</app-content>

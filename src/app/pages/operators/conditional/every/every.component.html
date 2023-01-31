@@ -1,9 +1,10 @@
-<div class="d-flex flex-column mh-30">
-  <blockquote>
+<app-content [html]="html" [js]="js">
+  <span description>
     Возвращает true, если все значения в потоке удовлетворяют условию. Например
     если все запросы к серверу имеют успешный статус.
-  </blockquote>
-  <div class="row">
+  </span>
+
+  <div example class="row">
     <div class="col-8">{{ result$ | async }}</div>
     <div class="col-4">
       <button type="button" class="btn btn-primary" (click)="changeRequest()">
@@ -11,16 +12,4 @@
       </button>
     </div>
   </div>
-  <div class="row of-auto scroll">
-    <div class="col-6">
-      <pre class="scroll">
-        {{ js }}
-      </pre>
-    </div>
-    <div class="col-6">
-      <pre class="scroll">
-        {{ html }}
-      </pre>
-    </div>
-  </div>
-</div>
+</app-content>

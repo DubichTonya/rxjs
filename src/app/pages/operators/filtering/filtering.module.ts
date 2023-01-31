@@ -9,7 +9,7 @@ import { DistinctUntilKeyChangedComponent } from './distinct-until-key-changed/d
 import { FilterComponent } from './filter/filter.component';
 import { TakeComponent } from './take/take.component';
 import { TakeUntilComponent } from './take-until/take-until.component';
-
+import { ContentComponent } from 'src/app/shared/components/content/content.component';
 
 @NgModule({
   declarations: [
@@ -19,11 +19,8 @@ import { TakeUntilComponent } from './take-until/take-until.component';
     DistinctUntilKeyChangedComponent,
     FilterComponent,
     TakeComponent,
-    TakeUntilComponent
+    TakeUntilComponent,
   ],
-  imports: [
-    CommonModule,
-    FilteringRoutingModule
-  ]
+  imports: [CommonModule, FilteringRoutingModule, ContentComponent],
 })
-export class FilteringModule { }
+export class FilteringModule {}

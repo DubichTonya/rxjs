@@ -1,0 +1,25 @@
+<div
+  class="d-flex flex-column mh-30"
+  [class]="{
+    'mh-30': !isSubject,
+    'mh-72': isSubject,
+    'pt-2': isSubject
+  }"
+>
+  <blockquote>
+    <ng-content select="[description]"></ng-content>
+  </blockquote>
+  <ng-content select="[example]"></ng-content>
+  <div class="row of-auto scroll">
+    <div class="col-6">
+      <pre class="scroll">
+        {{ js }}
+      </pre>
+    </div>
+    <div class="col-6">
+      <pre class="scroll">
+        {{ html }}
+      </pre>
+    </div>
+  </div>
+</div>

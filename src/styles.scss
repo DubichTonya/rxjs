@@ -1,5 +1,5 @@
-@import 'src/assets/styles/modules/_variables.scss';
-@import 'src/assets/styles/modules/_scroll.scss';
+@import "src/assets/styles/modules/_variables.scss";
+@import "src/assets/styles/modules/_scroll.scss";
 
 html {
   box-sizing: border-box;
@@ -45,12 +45,4 @@ blockquote {
   font-size: $font-sm;
   padding-bottom: 10px;
   border-bottom: 1px solid black;
-}
-
-.mh-30 {
-  max-height: calc(100vh - 30px);
-}
-
-.of-auto {
-  overflow: auto;
 }

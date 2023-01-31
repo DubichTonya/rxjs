@@ -8,7 +8,7 @@ import { OfComponent } from './of/of.component';
 import { FromEventComponent } from './from-event/from-event.component';
 import { IntervalComponent } from './interval/interval.component';
 import { TimerComponent } from './timer/timer.component';
-
+import { ContentComponent } from 'src/app/shared/components/content/content.component';
 
 @NgModule({
   declarations: [
@@ -17,11 +17,8 @@ import { TimerComponent } from './timer/timer.component';
     OfComponent,
     FromEventComponent,
     IntervalComponent,
-    TimerComponent
+    TimerComponent,
   ],
-  imports: [
-    CommonModule,
-    CreationRoutingModule
-  ]
+  imports: [CommonModule, CreationRoutingModule, ContentComponent],
 })
-export class CreationModule { }
+export class CreationModule {}
