@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { BufferTimeComponent } from './buffer-time/buffer-time.component';
 import { ConcatMapComponent } from './concat-map/concat-map.component';
-import { FlatMapComponent } from './flat-map/flat-map.component';
+import { ExhaustMapComponent } from './exhaust-map/exhaust-map.component';
 import { MapComponent } from './map/map.component';
 import { MergeMapComponent } from './merge-map/merge-map.component';
 import { ScanComponent } from './scan/scan.component';
@@ -35,9 +35,9 @@ const routes: Routes = [
         component: MapComponent,
       },
       {
-        path: 'flatMap',
-        title: 'flatMap',
-        component: FlatMapComponent,
+        path: 'exhaustMap',
+        title: 'exhaustMap',
+        component: ExhaustMapComponent,
       },
       {
         path: 'mergeMap',

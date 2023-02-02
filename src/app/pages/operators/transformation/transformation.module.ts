@@ -7,10 +7,11 @@ import { BufferTimeComponent } from './buffer-time/buffer-time.component';
 import { ConcatMapComponent } from './concat-map/concat-map.component';
 import { MapComponent } from './map/map.component';
 import { MergeMapComponent } from './merge-map/merge-map.component';
-import { FlatMapComponent } from './flat-map/flat-map.component';
 import { SwitchMapComponent } from './switch-map/switch-map.component';
 import { ScanComponent } from './scan/scan.component';
 import { ContentComponent } from 'src/app/shared/components/content/content.component';
+import { ExhaustMapComponent } from './exhaust-map/exhaust-map.component';
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -19,10 +20,15 @@ import { ContentComponent } from 'src/app/shared/components/content/content.comp
     ConcatMapComponent,
     MapComponent,
     MergeMapComponent,
-    FlatMapComponent,
+    ExhaustMapComponent,
     SwitchMapComponent,
     ScanComponent,
   ],
-  imports: [CommonModule, TransformationRoutingModule, ContentComponent],
+  imports: [
+    CommonModule,
+    TransformationRoutingModule,
+    ContentComponent,
+    ReactiveFormsModule,
+  ],
 })
 export class TransformationModule {}

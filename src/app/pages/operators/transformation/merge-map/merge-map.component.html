@@ -1,5 +1,7 @@
 <app-content [html]="html" [js]="js">
-  <span description> #description </span>
+  <span description>
+    Выводит observable в потоке не дожидаясь окончания предыдущего.
+  </span>
 
-  <div example>#example</div>
+  <div example [style.min-height.px]="30">{{ result$ | async }}</div>
 </app-content>

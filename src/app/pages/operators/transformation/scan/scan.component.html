@@ -1,5 +1,7 @@
 <app-content [html]="html" [js]="js">
-  <span description> #description </span>
+  <span description> Работает также как и reduce в js </span>
 
-  <div example>#example</div>
+  <div example [style.min-height.px]="30">
+    {{ result$ | async }}
+  </div>
 </app-content>

@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { catchError, of, throwError } from 'rxjs';
 import { html, js } from './template';
 
 @Component({
@@ -9,4 +10,8 @@ import { html, js } from './template';
 export class CatchErrorComponent {
   public html = html;
   public js = js;
+
+  public result$ = throwError('This is an error!').pipe(
+    catchError((val) => of(`I caught: ${val}`))
+  );
 }

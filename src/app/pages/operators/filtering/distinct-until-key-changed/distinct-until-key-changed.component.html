@@ -1,5 +1,7 @@
 <app-content [html]="html" [js]="js">
-  <span description> #description </span>
+  <span description>
+    Возвращает значение, если ключ отличается от предыдущего.
+  </span>
 
-  <div example>#example</div>
+  <div example>Вывод: {{ source$ | async }}</div>
 </app-content>

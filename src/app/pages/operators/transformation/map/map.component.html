@@ -1,5 +1,7 @@
 <app-content [html]="html" [js]="js">
-  <span description> #description </span>
+  <span description> Трансформирует данные observable </span>
 
-  <div example>#example</div>
+  <div example *ngFor="let item of request$ | async">
+    Id: {{ item?.id }} Name: {{ item?.username }} Access: {{ item?.hasAccess }}
+  </div>
 </app-content>

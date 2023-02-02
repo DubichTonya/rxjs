@@ -1,7 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { MulticastingComponent } from './multicasting.component';
-import { ShareReplyComponent } from './share-reply/share-reply.component';
 import { ShareComponent } from './share/share.component';
 
 const routes: Routes = [
@@ -18,11 +17,6 @@ const routes: Routes = [
         path: 'share',
         title: 'share',
         component: ShareComponent,
-      },
-      {
-        path: 'shareReplay',
-        title: 'shareReplay',
-        component: ShareReplyComponent,
       },
     ],
   },

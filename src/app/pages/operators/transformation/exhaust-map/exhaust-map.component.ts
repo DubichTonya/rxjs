@@ -1,15 +1,25 @@
 import { HttpClient } from '@angular/common/http';
-import { Component } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
 import { FormBuilder } from '@angular/forms';
-import { delay, exhaustMap, Subject, switchMap, takeUntil } from 'rxjs';
+import {
+  delay,
+  from,
+  concatMap,
+  exhaustMap,
+  map,
+  of,
+  switchMap,
+  Subject,
+  takeUntil,
+} from 'rxjs';
 import { html, js } from './template';
 
 @Component({
-  selector: 'app-switch-map',
-  templateUrl: './switch-map.component.html',
-  styleUrls: ['./switch-map.component.scss'],
+  selector: 'app-exhaust-map',
+  templateUrl: './exhaust-map.component.html',
+  styleUrls: ['./exhaust-map.component.scss'],
 })
-export class SwitchMapComponent {
+export class ExhaustMapComponent implements OnInit, OnDestroy {
   public html = html;
   public js = js;
 
@@ -43,7 +53,7 @@ export class SwitchMapComponent {
     this.productForm.valueChanges
       .pipe(
         delay(5000),
-        switchMap((e) => {
+        exhaustMap((e) => {
           return this.http.put('https://fakestoreapi.com/products/' + e.id, {
             ...e,
           });

@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { distinctUntilChanged, interval, map, scan, take } from 'rxjs';
 import { html, js } from './template';
 
 @Component({
@@ -9,4 +10,10 @@ import { html, js } from './template';
 export class ScanComponent {
   public html = html;
   public js = js;
+
+  result$ = interval(1000).pipe(
+    take(15),
+    scan((a: any[], c) => [...a, c], []),
+    distinctUntilChanged()
+  );
 }

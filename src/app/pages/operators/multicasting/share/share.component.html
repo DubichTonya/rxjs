@@ -1,5 +1,33 @@
 <app-content [html]="html" [js]="js">
-  <span description> #description </span>
+  <span description>
+    Основное применение, это уменьшение запросов к серверу. Это тему в пару
+    словах не объяснить, нужно понимать что такое "Hot vs Cold Observables".
+    Хотелось бы обратить внимание на различия в работе share и shareReplay. Если
+    мы посмотрим вкладку network, то увидим все запросы отправляемые к серверу.
+    Так вот запросы продукта 1 у нас вызывается 2 раза, запрос продукта 2 только
+    один. При применении share, когда отработает setTimeout у нас будет
+    повторный запрос к серверу.
+    <br />
+  </span>
 
-  <div example>#example</div>
+  <div example class="row">
+    <div class="col-6">
+      {{ (product$ | async)?.title }}
+    </div>
+    <div class="col-6">
+      {{ (product2$ | async)?.title }}
+    </div>
+    <div class="col-6">
+      {{ (product$ | async)?.price }}
+    </div>
+    <div class="col-6">
+      {{ (product2$ | async)?.price }}
+    </div>
+    <div *ngIf="isShowCategory" class="col-6">
+      {{ (product$ | async)?.category }}
+    </div>
+    <div *ngIf="isShowCategory" class="col-6">
+      {{ (product2$ | async)?.category }}
+    </div>
+  </div>
 </app-content>

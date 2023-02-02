@@ -1,5 +1,9 @@
 <app-content [html]="html" [js]="js">
-  <span description> #description </span>
+  <span description>
+    Как понятно из названия нужен для того чтобы отлавливать ошибки.
+  </span>
 
-  <div example>#example</div>
+  <div example>
+    {{ result$ | async }}
+  </div>
 </app-content>

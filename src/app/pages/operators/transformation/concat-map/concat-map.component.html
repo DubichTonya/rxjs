@@ -1,5 +1,8 @@
 <app-content [html]="html" [js]="js">
-  <span description> #description </span>
+  <span description>
+    Переходит к следующему observable в потоке только после завершения
+    предыдущего.
+  </span>
 
-  <div example>#example</div>
+  <div example>{{ sources$ | async | json }}</div>
 </app-content>

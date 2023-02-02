@@ -1,5 +1,9 @@
 <app-content [html]="html" [js]="js">
-  <span description> #description </span>
+  <span description>
+    Пробует выполнить запрос указанное кол-во раз, если он завершился с ошибкой.
+  </span>
 
-  <div example>#example</div>
+  <div example [style.min-height.px]="30">
+    {{ result$ | async }}
+  </div>
 </app-content>

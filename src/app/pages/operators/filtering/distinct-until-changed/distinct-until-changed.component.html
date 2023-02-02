@@ -1,5 +1,9 @@
 <app-content [html]="html" [js]="js">
-  <span description> #description </span>
+  <span description>
+    Возвращает значение, если оно отличается от предыдущего.
+  </span>
 
-  <div example>#example</div>
+  <div example>
+    <div example>Вывод: {{ source$ | async }}</div>
+  </div>
 </app-content>

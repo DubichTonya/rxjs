@@ -52,36 +52,30 @@ export const mapOfOperators = new Map([
       ['distinctUntilChanged', pathFiltering + 'distinctUntilChanged'],
       ['distinctUntilKeyChanged', pathFiltering + 'distinctUntilKeyChanged'],
       ['filter', pathFiltering + 'filter'],
-      ['take', pathFiltering + 'take'],
-      ['takeUntil', pathFiltering + 'takeUntil'],
+      // ['take', pathFiltering + 'take'],
+      // ['takeUntil', pathFiltering + 'takeUntil'],
     ],
   ],
-  [
-    'multicasting',
-    [
-      ['share', pathMulticasting + 'share'],
-      ['shareReplay', pathMulticasting + 'shareReplay'],
-    ],
-  ],
+  ['multicasting', [['share / shareReplay', pathMulticasting + 'share']]],
   [
     'transformation',
     [
-      ['bufferTime', pathTransformation + 'bufferTime'],
+      // ['bufferTime', pathTransformation + 'bufferTime'],
       ['concatMap', pathTransformation + 'concatMap'],
-      ['flatMap', pathTransformation + 'flatMap'],
+      ['exhaustMap', pathTransformation + 'exhaustMap'],
       ['map', pathTransformation + 'map'],
       ['mergeMap', pathTransformation + 'mergeMap'],
       ['scan', pathTransformation + 'scan'],
       ['switchMap', pathTransformation + 'switchMap'],
     ],
   ],
-  [
-    'utility',
-    [
-      ['delay', pathUtility + 'delay'],
-      ['do', pathUtility + 'do'],
-      ['finalize', pathUtility + 'finalize'],
-      ['tap', pathUtility + 'tap'],
-    ],
-  ],
+  // [
+  //   'utility',
+  //   [
+  //     ['delay', pathUtility + 'delay'],
+  //     ['do', pathUtility + 'do'],
+  //     ['finalize', pathUtility + 'finalize'],
+  //     ['tap', pathUtility + 'tap'],
+  //   ],
+  // ],
 ]);

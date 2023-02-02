@@ -38,16 +38,16 @@ const routes: Routes = [
         title: 'filter',
         component: FilterComponent,
       },
-      {
-        path: 'take',
-        title: 'take',
-        component: TakeComponent,
-      },
-      {
-        path: 'takeUntil',
-        title: 'takeUntil',
-        component: TakeUntilComponent,
-      },
+      // {
+      //   path: 'take',
+      //   title: 'take',
+      //   component: TakeComponent,
+      // },
+      // {
+      //   path: 'takeUntil',
+      //   title: 'takeUntil',
+      //   component: TakeUntilComponent,
+      // },
     ],
   },
 ];

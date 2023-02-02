@@ -72,7 +72,7 @@ ngOnInit(): void {
   this.productForm.valueChanges
     .pipe(
       delay(5000),
-      switchMap((e) => {
+      exhaustMap((e) => {
         return this.http.put('https://fakestoreapi.com/products/' + e.id, {
           ...e,
         });
